@@ -9,6 +9,8 @@ def open_file():
    f=file1.read()
    textarea.insert(tk.END,f)
 
+def unload_file():
+   return 1
 window = tk.Tk()
 window.geometry("1000x1000")
 window.title("Notepad")
@@ -19,6 +21,7 @@ window.config(menu=menubar)
 file_menu=tk.Menu(menubar)
 menubar.add_cascade(label="File",menu=file_menu)
 file_menu.add_command(label="Load", command=open_file)
+file_menu.add_command(label="Unload", command=unload_file)
 file_menu.add_command(label="Exit", command=window.quit)
 textarea=tk.Text(window)
 textarea.pack(fill=tk.BOTH, expand=True)
